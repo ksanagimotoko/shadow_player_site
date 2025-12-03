@@ -34,6 +34,23 @@
             color: white;
             padding: 40px 30px;
             text-align: center;
+            position: relative;
+        }
+
+        .header-image {
+            max-width: 300px;
+            width: 100%;
+            margin: 20px auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-logo {
+            max-width: 150px;
+            width: 100%;
+            margin: 0 auto 15px;
+            display: block;
         }
 
         .header h1 {
@@ -118,6 +135,26 @@
             white-space: pre-line;
         }
 
+        .guide-item-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: block;
+        }
+
+        .guide-item-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guide-item-with-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -173,14 +210,20 @@
             .feature-grid {
                 grid-template-columns: 1fr;
             }
+
+            .guide-item-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <img src="images/logo_image.png" alt="Shadow Play 로고" class="header-logo">
             <h1>Shadow Play</h1>
             <p>원하는 구간만 반복 재생하는 스마트 비디오 플레이어</p>
+            <img src="images/ashotofFlipped.png" alt="Shadow Play 앱 화면" class="header-image">
         </div>
 
         <div class="content">
@@ -193,31 +236,45 @@
             <div id="content-ko">
                 <div class="section">
                     <h2 class="section-title">기본 기능</h2>
-                    <div class="guide-item">
-                        <div class="guide-item-title">구간 자르기</div>
-                        <div class="guide-item-desc">현재 위치에서 구간을 나눕니다.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">가져오기</div>
+                            <div class="guide-item-desc">공유받은 구간 정보를 가져옵니다.</div>
+                        </div>
+                        <img src="images/import_file.png" alt="가져오기" class="guide-item-image">
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">자막 캡처</div>
-                        <div class="guide-item-desc">현재 자막을 단어장에 저장합니다.
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">반복, 셔플, 백그라운드 재생</div>
+                            <div class="guide-item-desc">반복 재생, 셔플 재생, 백그라운드 재생 기능을 사용할 수 있습니다.</div>
+                        </div>
+                        <img src="images/loop_shuffle_backgroundplay.png" alt="반복, 셔플, 백그라운드 재생" class="guide-item-image">
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">구간 자르기</div>
+                            <div class="guide-item-desc">현재 위치에서 구간을 나눕니다.</div>
+                        </div>
+                        <img src="images/segment_shot.png" alt="구간 자르기" class="guide-item-image">
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">자막 선택</div>
+                            <div class="guide-item-desc">SRT 자막 파일을 불러옵니다.</div>
+                        </div>
+                        <img src="images/import_subtitle.png" alt="자막 선택" class="guide-item-image">
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">자막 캡처</div>
+                            <div class="guide-item-desc">현재 자막을 단어장에 저장합니다.
 (SRT 자막 추가 시 표시)</div>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">단어장</div>
-                        <div class="guide-item-desc">저장된 자막 목록을 확인합니다.
-(SRT 자막 추가 시 표시)</div>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">자막 선택</div>
-                        <div class="guide-item-desc">SRT 자막 파일을 불러옵니다.</div>
+                        </div>
+                        <img src="images/subtitle_capture.png" alt="자막 캡처" class="guide-item-image">
                     </div>
                     <div class="guide-item">
                         <div class="guide-item-title">공유</div>
                         <div class="guide-item-desc">현재 구간 정보를 공유합니다.</div>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">가져오기</div>
-                        <div class="guide-item-desc">공유받은 구간 정보를 가져옵니다.</div>
                     </div>
                     <div class="guide-item">
                         <div class="guide-item-title">길게 누르기</div>
@@ -247,33 +304,71 @@
                         <div class="guide-item-title">항목 두 번 탭</div>
                         <div class="guide-item-desc">재생 일시정지</div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">반복 버튼</div>
-                        <div class="guide-item-desc">반복 횟수 변경</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">반복 버튼</div>
+                            <div class="guide-item-desc">반복 횟수 변경</div>
+                        </div>
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">구간 버튼 수동 조작</div>
+                            <div class="guide-item-desc">구간 버튼을 수동으로 조작할 수 있습니다.</div>
+                        </div>
+                        <img src="images/segment_button_manual.png" alt="구간 버튼 수동 조작" class="guide-item-image">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">설정</h2>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">설정 화면</div>
+                            <div class="guide-item-desc">앱의 다양한 설정을 변경할 수 있습니다.</div>
+                        </div>
+                        <img src="images/setting_shadow_play.png" alt="설정 화면" class="guide-item-image">
                     </div>
                 </div>
 
                 <div class="section">
                     <h2 class="section-title">단어장 사용법</h2>
-                    <div class="guide-item">
-                        <div class="guide-item-title">영상 재생</div>
-                        <div class="guide-item-desc">항목을 탭하면 해당 시간의 영상이 재생됩니다.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">영상 재생</div>
+                            <div class="guide-item-desc">항목을 탭하면 해당 시간의 영상이 재생됩니다.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">텍스트 복사</div>
-                        <div class="guide-item-desc">항목을 두 번 탭하면 텍스트가 클립보드에 복사됩니다.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">텍스트 복사</div>
+                            <div class="guide-item-desc">항목을 두 번 탭하면 텍스트가 클립보드에 복사됩니다.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">항목 삭제</div>
-                        <div class="guide-item-desc">좌우로 밀어서 항목을 삭제할 수 있습니다.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">항목 삭제</div>
+                            <div class="guide-item-desc">좌우로 밀어서 항목을 삭제할 수 있습니다.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">즐겨찾기</div>
-                        <div class="guide-item-desc">하트 아이콘을 눌러 즐겨찾기 할 수 있습니다. 즐겨찾기된 항목은 상단으로 이동합니다.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">즐겨찾기</div>
+                            <div class="guide-item-desc">하트 아이콘을 눌러 즐겨찾기 할 수 있습니다. 즐겨찾기된 항목은 상단으로 이동합니다.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">길게 눌러 재생</div>
-                        <div class="guide-item-desc">길게 누르면 0.5배속 재생, 떼면 일시정지됩니다.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">길게 눌러 재생</div>
+                            <div class="guide-item-desc">길게 누르면 0.5배속 재생, 떼면 일시정지됩니다.</div>
+                        </div>
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">단어장</div>
+                            <div class="guide-item-desc">저장된 자막 목록을 확인합니다.
+(SRT 자막 추가 시 표시)</div>
+                        </div>
+                        <img src="images/wordbook.png" alt="단어장" class="guide-item-image">
                     </div>
                 </div>
 
@@ -304,31 +399,45 @@
             <div id="content-en" class="hidden">
                 <div class="section">
                     <h2 class="section-title">Basic Features</h2>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Split Segment</div>
-                        <div class="guide-item-desc">Split the segment at the current position.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Import</div>
+                            <div class="guide-item-desc">Import shared segment info.</div>
+                        </div>
+                        <img src="images/import_file.png" alt="Import" class="guide-item-image">
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Capture Subtitle</div>
-                        <div class="guide-item-desc">Save current subtitle to wordbook.
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Loop, Shuffle, Background Play</div>
+                            <div class="guide-item-desc">Use loop playback, shuffle playback, and background playback features.</div>
+                        </div>
+                        <img src="images/loop_shuffle_backgroundplay.png" alt="Loop, Shuffle, Background Play" class="guide-item-image">
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Split Segment</div>
+                            <div class="guide-item-desc">Split the segment at the current position.</div>
+                        </div>
+                        <img src="images/segment_shot.png" alt="Split Segment" class="guide-item-image">
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Select Subtitle</div>
+                            <div class="guide-item-desc">Load an SRT subtitle file.</div>
+                        </div>
+                        <img src="images/import_subtitle.png" alt="Select Subtitle" class="guide-item-image">
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Capture Subtitle</div>
+                            <div class="guide-item-desc">Save current subtitle to wordbook.
 (Visible when SRT added)</div>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Wordbook</div>
-                        <div class="guide-item-desc">View saved subtitles.
-(Visible when SRT added)</div>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Select Subtitle</div>
-                        <div class="guide-item-desc">Load an SRT subtitle file.</div>
+                        </div>
+                        <img src="images/subtitle_capture.png" alt="Capture Subtitle" class="guide-item-image">
                     </div>
                     <div class="guide-item">
                         <div class="guide-item-title">Share</div>
                         <div class="guide-item-desc">Share current segment info.</div>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Import</div>
-                        <div class="guide-item-desc">Import shared segment info.</div>
                     </div>
                     <div class="guide-item">
                         <div class="guide-item-title">Long Press</div>
@@ -358,33 +467,71 @@
                         <div class="guide-item-title">Double Tap Item</div>
                         <div class="guide-item-desc">Pause playback</div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Loop Button</div>
-                        <div class="guide-item-desc">Change loop count</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Loop Button</div>
+                            <div class="guide-item-desc">Change loop count</div>
+                        </div>
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Manual Segment Button</div>
+                            <div class="guide-item-desc">Manually control segment buttons.</div>
+                        </div>
+                        <img src="images/segment_button_manual.png" alt="Manual Segment Button" class="guide-item-image">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Settings</h2>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Settings Screen</div>
+                            <div class="guide-item-desc">Change various app settings.</div>
+                        </div>
+                        <img src="images/setting_shadow_play.png" alt="Settings Screen" class="guide-item-image">
                     </div>
                 </div>
 
                 <div class="section">
                     <h2 class="section-title">Wordbook Usage Guide</h2>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Play Video</div>
-                        <div class="guide-item-desc">Tap an item to play the video at that timestamp.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Play Video</div>
+                            <div class="guide-item-desc">Tap an item to play the video at that timestamp.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Copy Text</div>
-                        <div class="guide-item-desc">Double tap an item to copy the text to clipboard.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Copy Text</div>
+                            <div class="guide-item-desc">Double tap an item to copy the text to clipboard.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Delete Item</div>
-                        <div class="guide-item-desc">Swipe left or right to delete an item.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Delete Item</div>
+                            <div class="guide-item-desc">Swipe left or right to delete an item.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Favorite</div>
-                        <div class="guide-item-desc">Tap the heart icon to favorite. Favorites are moved to the top.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Favorite</div>
+                            <div class="guide-item-desc">Tap the heart icon to favorite. Favorites are moved to the top.</div>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <div class="guide-item-title">Long Press Play</div>
-                        <div class="guide-item-desc">Long press to play at 0.5x speed, release to pause.</div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Long Press Play</div>
+                            <div class="guide-item-desc">Long press to play at 0.5x speed, release to pause.</div>
+                        </div>
+                    </div>
+                    <div class="guide-item guide-item-with-image">
+                        <div class="guide-item-content">
+                            <div class="guide-item-title">Wordbook</div>
+                            <div class="guide-item-desc">View saved subtitles.
+(Visible when SRT added)</div>
+                        </div>
+                        <img src="images/wordbook.png" alt="Wordbook" class="guide-item-image">
                     </div>
                 </div>
 
